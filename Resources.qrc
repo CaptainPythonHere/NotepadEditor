@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/images"/>
+    <qresource prefix="/Images"/>
+    <qresource prefix="/">
+        <file>Images/add-file.png</file>
+        <file>Images/bold.png</file>
+        <file>Images/copy.png</file>
+        <file>Images/cut.png</file>
+        <file>Images/exit.png</file>
+        <file>Images/file.png</file>
+        <file>Images/logout.png</file>
+        <file>Images/open-folder.png</file>
+        <file>Images/paste.png</file>
+        <file>Images/print.png</file>
+        <file>Images/redo.png</file>
+        <file>Images/save.png</file>
+        <file>Images/save-as.png</file>
+        <file>Images/subscript.png</file>
+        <file>Images/superscript.png</file>
+        <file>Images/unbold.png</file>
+        <file>Images/undo.png</file>
+        <file>Images/about.png</file>
+        <file>Images/italics.png</file>
+        <file>Images/underline.png</file>
+        <file>Images/un-italics.png</file>
+        <file>Images/un-underline.png</file>
+        <file>resume/resume.html</file>
+    </qresource>
+</RCC>
