@@ -72,14 +72,11 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Format</string>
     </property>
-    <addaction name="actionBold"/>
-    <addaction name="actionUn_bold"/>
-    <addaction name="actionSuperscript"/>
-    <addaction name="actionSubscript"/>
-    <addaction name="actionItalics"/>
-    <addaction name="actionUn_Italics"/>
-    <addaction name="actionUnderlined"/>
-    <addaction name="actionUn_Underlined"/>
+    <addaction name="actionBold_toggle"/>
+    <addaction name="actionItalicise"/>
+    <addaction name="actionUnderline"/>
+    <addaction name="actionSuperScript"/>
+    <addaction name="actionSubScript"/>
    </widget>
    <addaction name="menuFiles"/>
    <addaction name="menuEdit"/>
@@ -100,15 +97,13 @@ p, li { white-space: pre-wrap; }
    <addaction name="actionOpen"/>
    <addaction name="actionUndo"/>
    <addaction name="actionRedo"/>
-   <addaction name="actionBold"/>
-   <addaction name="actionUn_bold"/>
-   <addaction name="actionItalics"/>
-   <addaction name="actionUn_Italics"/>
-   <addaction name="actionUnderlined"/>
-   <addaction name="actionUn_Underlined"/>
-   <addaction name="actionSuperscript"/>
-   <addaction name="actionSubscript"/>
-   <addaction name="actionAbout_Me"/>
+   <addaction name="separator"/>
+   <addaction name="actionBold_toggle"/>
+   <addaction name="actionItalicise"/>
+   <addaction name="actionUnderline"/>
+   <addaction name="actionSuperScript"/>
+   <addaction name="actionSubScript"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -158,7 +153,7 @@ p, li { white-space: pre-wrap; }
     <string>Save As</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Alt+Ś</string>
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
   <action name="actionPrint">
@@ -243,109 +238,70 @@ p, li { white-space: pre-wrap; }
     <string>Ctrl+Y</string>
    </property>
   </action>
-  <action name="actionBold">
+  <action name="actionBold_toggle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="Resources.qrc">
      <normaloff>:/Images/bold.png</normaloff>:/Images/bold.png</iconset>
    </property>
    <property name="text">
-    <string>Bold</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+B</string>
+    <string>Bold </string>
    </property>
   </action>
-  <action name="actionUn_bold">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/Images/unbold.png</normaloff>:/Images/unbold.png</iconset>
+  <action name="actionItalicise">
+   <property name="checkable">
+    <bool>true</bool>
    </property>
-   <property name="text">
-    <string>Un-bold</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+B</string>
-   </property>
-  </action>
-  <action name="actionSuperscript">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/Images/superscript.png</normaloff>:/Images/superscript.png</iconset>
-   </property>
-   <property name="text">
-    <string>Superscript</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+Up</string>
-   </property>
-  </action>
-  <action name="actionSubscript">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/Images/subscript.png</normaloff>:/Images/subscript.png</iconset>
-   </property>
-   <property name="text">
-    <string>Subscript</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+Down</string>
-   </property>
-  </action>
-  <action name="actionAbout_Me">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/Images/about.png</normaloff>:/Images/about.png</iconset>
-   </property>
-   <property name="text">
-    <string>About Me</string>
-   </property>
-  </action>
-  <action name="actionItalics">
    <property name="icon">
     <iconset resource="Resources.qrc">
      <normaloff>:/Images/italics.png</normaloff>:/Images/italics.png</iconset>
    </property>
    <property name="text">
-    <string>Italics</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+I</string>
+    <string>Italicise</string>
    </property>
   </action>
-  <action name="actionUn_Italics">
-   <property name="icon">
-    <iconset resource="Resources.qrc">
-     <normaloff>:/Images/un-italics.png</normaloff>:/Images/un-italics.png</iconset>
+  <action name="actionUnderline">
+   <property name="checkable">
+    <bool>true</bool>
    </property>
-   <property name="text">
-    <string>Un-Italics</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+I</string>
-   </property>
-  </action>
-  <action name="actionUnderlined">
    <property name="icon">
     <iconset resource="Resources.qrc">
      <normaloff>:/Images/underline.png</normaloff>:/Images/underline.png</iconset>
    </property>
    <property name="text">
-    <string>Underlined</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+U</string>
+    <string>Underline</string>
    </property>
   </action>
-  <action name="actionUn_Underlined">
+  <action name="actionSuperScript">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="Resources.qrc">
-     <normaloff>:/Images/un-underline.png</normaloff>:/Images/un-underline.png</iconset>
+     <normaloff>:/Images/superscript.png</normaloff>:/Images/superscript.png</iconset>
    </property>
    <property name="text">
-    <string>Un-Underlined</string>
+    <string>SuperScript</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+U</string>
+  </action>
+  <action name="actionSubScript">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Images/subscript.png</normaloff>:/Images/subscript.png</iconset>
+   </property>
+   <property name="text">
+    <string>SubScript</string>
    </property>
   </action>
  </widget>

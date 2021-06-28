@@ -62,6 +62,8 @@ void Notepad::on_actionSave_triggered()
     }
     setWindowTitle(fileName);
     QTextStream out(&file);
+    QString text = ui->textEdit->toPlainText();
+    out << text;
     file.close();
 
 }
@@ -81,6 +83,8 @@ void Notepad::on_actionSave_As_triggered()
     currentFile = fileName;
     setWindowTitle(fileName);
     QTextStream out(&file);
+    QString text = ui->textEdit->toPlainText();
+    out << text;
     file.close();
 
 }
@@ -132,91 +136,68 @@ void Notepad::on_actionRedo_triggered()
 }
 
 
-void Notepad::on_actionBold_triggered()
-{
-
-    QTextCharFormat format;
-    format.setFontWeight(QFont::Bold);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
-}
 
 
-void Notepad::on_actionUn_bold_triggered()
+
+void Notepad::on_actionBold_toggle_triggered(bool checked)
 {
     QTextCharFormat format;
-    format.setFontWeight(QFont::Normal);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
-}
+    if(checked)
+        format.setFontWeight(QFont::Bold);
+    else
+        format.setFontWeight(QFont::Normal);
 
-
-void Notepad::on_actionSuperscript_triggered()
-{
-    QTextCharFormat format;
-    format.setVerticalAlignment(QTextCharFormat::AlignSuperScript);
     if(ui->textEdit->hasFocus())
     ui->textEdit->mergeCurrentCharFormat(format);
 }
 
 
-void Notepad::on_actionSubscript_triggered()
+void Notepad::on_actionItalicise_triggered(bool checked)
 {
     QTextCharFormat format;
-    format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
+    if(checked)
+        format.setFontItalic(QFont::StyleItalic);
+    else
+        format.setFontItalic(QFont::StyleNormal);
+
     if(ui->textEdit->hasFocus())
     ui->textEdit->mergeCurrentCharFormat(format);
 }
 
 
-void Notepad::on_actionAbout_Me_triggered()
-{
-    QFile file(":/resume/resume.html");
-    QString content = "" ;
-    if(file.open(QFile::ReadOnly | QFile::Text))
-        {
-            QTextStream in(&file);
-            content = in.readAll();
-            file.close();
-        }
-     QMessageBox message;
-     message.information(this, "About Me", content);
-
-}
-
-void Notepad::on_actionItalics_triggered()
+void Notepad::on_actionUnderline_triggered(bool checked)
 {
     QTextCharFormat format;
-    format.setFontItalic(QFont::StyleItalic);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
+    if(checked)
+        format.setFontUnderline(true);
+    else
+        format.setFontUnderline(false);
+
+    if(ui->textEdit->hasFocus())
+    ui->textEdit->mergeCurrentCharFormat(format);
 }
 
-void Notepad::on_actionUn_Italics_triggered()
+
+void Notepad::on_actionSuperScript_triggered(bool checked)
 {
     QTextCharFormat format;
-    format.setFontItalic(QFont::StyleNormal);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
+    if(checked)
+        format.setVerticalAlignment(QTextCharFormat::AlignSuperScript);
+    else
+        format.setVerticalAlignment(QTextCharFormat::AlignNormal);
+    if(ui->textEdit->hasFocus())
+    ui->textEdit->mergeCurrentCharFormat(format);
 }
 
-void Notepad::on_actionUnderlined_triggered()
+
+void Notepad::on_actionSubScript_triggered(bool checked)
 {
     QTextCharFormat format;
-    format.setFontUnderline(true);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
+    if(checked)
+        format.setVerticalAlignment(QTextCharFormat::AlignSubScript);
+    else
+        format.setVerticalAlignment(QTextCharFormat::AlignNormal);
+    if(ui->textEdit->hasFocus())
+    ui->textEdit->mergeCurrentCharFormat(format);
 }
-
-
-void Notepad::on_actionUn_Underlined_triggered()
-{
-    QTextCharFormat format;
-    format.setFontUnderline(false);
-    QTextCursor cursor = ui->textEdit->textCursor();
-    cursor.mergeCharFormat(format);
-}
-
-
-
 

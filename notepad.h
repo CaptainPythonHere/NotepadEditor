@@ -46,23 +46,15 @@ private slots:
 
     void on_actionRedo_triggered();
 
-    void on_actionBold_triggered();
+    void on_actionBold_toggle_triggered(bool checked);
 
-    void on_actionUn_bold_triggered();
+    void on_actionItalicise_triggered(bool checked);
 
-    void on_actionSuperscript_triggered();
+    void on_actionUnderline_triggered(bool checked);
 
-    void on_actionSubscript_triggered();
+    void on_actionSuperScript_triggered(bool checked);
 
-    void on_actionAbout_Me_triggered();
-
-    void on_actionItalics_triggered();
-
-    void on_actionUnderlined_triggered();
-
-    void on_actionUn_Underlined_triggered();
-
-    void on_actionUn_Italics_triggered();
+    void on_actionSubScript_triggered(bool checked);
 
 private:
     Ui::Notepad *ui;
