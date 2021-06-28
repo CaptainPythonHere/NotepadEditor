@@ -46,4 +46,4 @@ notepad.ui, main.cpp,  and notepad.cpp.
 2.	In depth knowledge and understanding of documentation of qt.
 3.	Things might get confusing if not named properly.
 
-![Screenshot (606)](https://github.com/CaptainPythonHere/NotepadEditor/blob/main/Screenshot%20(606).png)
+![Screenshot (607)](https://github.com/CaptainPythonHere/NotepadEditor/blob/main/Screenshot%20(606).png)
